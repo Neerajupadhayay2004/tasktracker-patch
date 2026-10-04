@@ -1,0 +1,1 @@
+Add your own handwritten photos/scans here. Required by the assignment.
