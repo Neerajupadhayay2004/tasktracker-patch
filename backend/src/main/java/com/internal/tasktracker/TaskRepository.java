@@ -10,8 +10,7 @@ import java.util.List;
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
 
-    // Keep the archived, text-search, and status conditions grouped so SQL
-    // AND/OR precedence cannot return archived or wrong-status tasks.
+    // Group the text conditions so archived and status filters apply to both title and description matches.
     @Query(value = "SELECT * FROM tasks WHERE archived = FALSE "
                  + "AND (LOWER(title) LIKE :term OR LOWER(description) LIKE :term) "
                  + "AND (:status IS NULL OR status = :status) "
