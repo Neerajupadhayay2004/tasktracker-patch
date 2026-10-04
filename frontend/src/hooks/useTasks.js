@@ -9,7 +9,6 @@ export function useTasks(query, status, page, pageSize) {
 
   useEffect(() => {
     let cancelled = false;
-
     setLoading(true);
     setError(null);
 
